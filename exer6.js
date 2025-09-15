@@ -1,4 +1,4 @@
-const notas = {
+const notasAluno = {
     primeiroBimestre: 7.5,
     segundoBimestre: 8.0,
     terceiroBimestre: 6.5,
