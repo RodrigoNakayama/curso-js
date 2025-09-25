@@ -1,6 +1,6 @@
 const readline = require("readline");
 
-const rl = readline.createInterafce({
+const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
@@ -31,7 +31,7 @@ console.log("Por favor, informe o valor para cada categoria. Digite 0 se não ho
 
 function perguntar() {
     if (index < categorias.length) {
-        rl.question(`Valor de ${categoria[index]}: R$`, (resposta) =>{
+        rl.question(`Valor de ${categorias[index]}: R$`, (resposta) =>{
             despesas[nomesChaves[index]] = parseFloat(resposta);
             index++;
             perguntar();
@@ -44,12 +44,12 @@ function perguntar() {
 
 function mostrarResultados() {
     console.log("\n--- Despesas Registradas ---");
-    for (const categoria in despesas) {
-        if (!isNaN(despesas[categoria]) && despesas[categoria] >= 0) {
-            console.log(`${categoria.charAt(0).toUpperCase() + categoria.slice(1)}: R$ ${despesas[categproa].toFixed(2)}`);
+    for (const categorias in despesas) {
+        if (!isNaN(despesas[categorias]) && despesas[categoria] >= 0) {
+            console.log(`${categorias.charAt(0).toUpperCase() + categorias.slice(1)}: R$ ${despesas[categorias].toFixed(2)}`);
         } else {
-            console.log(`${categoria.charAt(0).toUpperCase() + categoria.slice(1)}: Valor inválido.`);
-            despesas[categoria] = 0;
+            console.log(`${categorias.charAt(0).toUpperCase() + categorias.slice(1)}: Valor inválido.`);
+            despesas[categorias] = 0;
         }
     }
     console.log("------------------------------------");
@@ -58,9 +58,9 @@ function mostrarResultados() {
     let numeroDeCategoriasComDespesa = 0;
 
     for (const categoria in despesas) {
-        if (!isNaN(despesas[categoria]) && despesas[categoria] >= 0) {
-            totalDespesas += despesas[categoria];
-            if (despesas[categoria] > 0) {
+        if (!isNaN(despesas[categorias]) && despesas[categorias] >= 0) {
+            totalDespesas += despesas[categorias];
+            if (despesas[categorias] > 0) {
                 numeroDeCategoriasComDespesa++;
             }
         }
